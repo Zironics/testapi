@@ -1,0 +1,19 @@
+<html>
+<body>
+    <head>
+        <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    </head>
+<form hx-get = "{% url 'profiles'%}" hx-target="#list" hx-swap = "outerHTML" class="d-flex flex-wrap justify-content-center align-items-center gap-3 mt-5" >
+       {%for field in form%}
+        <div class="form-group">
+          {{field.label}}
+          {{field}}
+        </div>
+       {%endfor%}
+       <button type="submit" class="btn btn-primary">rechercher</button>
+</form>
+
+{%include 'template.html'%}
+
+</body>
+</html>
